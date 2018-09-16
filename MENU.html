@@ -1,0 +1,89 @@
+<!-- 원래는 디바이스 화면에서 터치나 기기 외부에서의 입력값이 있을 때
+      화면이 켜지면서 데이터 베이스에서 메뉴화면을 받아온다. -->
+<!-- 이거에서는 <a>MENU을 클릭시 보성이가 보내주는 메뉴화면 값을 받아들여서 화면에 띄우고
+      <메뉴를 선택> 후 그 저장된 메뉴들을 다시 보성이테 보낸다.-->
+<html>
+  <head>
+    <title> device-main </title>
+    <meta charset="utf-8">
+    <style>
+     table {
+       width: 100%;
+       border: 1px solid #444444;
+     }
+     th, td {
+    border: 1px solid #444444;
+  }
+   </style>
+   <script  src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+   <script>
+
+   function goData() {
+     var form = document.userinput;
+
+     form.submit();
+   }
+ //   var jsres = $.getJSON( "http://d2001e77.ngrok.io/qrcode", function() {
+ //   console.log( "success" );
+ // });
+ //
+ //
+ // jqxhr.complete(function() {
+ //   console.log( "second complete" );
+ // });
+   // url = 'http://8f4b2883.ngrok.io/qrcode'
+   // MyController.$inject = [url];
+   // function MyController(url){
+   //   var promise = url.getJsonFileContents();
+   //   promise.then(function (response) {
+   //     var results = response.data;
+   //     console.log("The JSON response is: " + JSON.stringify(results));
+   //   })
+   //   .catch(function (error) {
+   //     console.log("Something went wrong.");
+   //   });
+   // }
+   // .done(function() {
+   //   console.log("second success");
+   // })
+   </script>
+
+  </head>
+  <body>
+    <h1> Device Main Home </h1>
+    <h2> Can I help you? </h2>
+    <table>
+      <thead>
+        <tr>
+          <th>햄버거</th><th>피자</th><th>치킨</th>
+        </tr>
+      </thead>
+      <form action="passing.php" method="post" name="userinput">
+        <tbody>
+          <tr>
+            <td>빅 맥<input type="checkbox" name="menu" value="빅맥" /> </td><td>고구마 피자<input type="checkbox" name="menu" value="gogumapizza" /></td><td>후라이드 치킨<input type="checkbox" name="menu" value="후라이드치킨" /></td>
+          </tr>
+          <tr>
+            <td>골든 에그 치즈버거<input type="checkbox" name="menu" value="골든에그치즈버거" /></td><td>치즈 피자<input type="checkbox" name="menu" value="cheezepizza" /></td><td>양념 치킨<input type="checkbox" name="menu" value="양념치킨" /></td>
+          </tr>
+          <tr>
+            <td>1955 버거<input type="checkbox" name="menu" value="1955버거" /></td><td>불고기 피자<input type="checkbox" name="menu" value="bulgogipizza" /></td><td>간장 치킨<input type="checkbox" name="menu" value="간장치킨" /></td>
+          </tr>
+          <tr>
+            <td>그릴드 머쉬룸 버거<input type="checkbox" name="menu" value="그릴드머쉬룸버거" /></td><td>페페로니 피자<input type="checkbox" name="menu" value="peperonipizza" /></td><td>핫 크리스피 치킨<input type="checkbox" name="menu" value="핫크리스피치킨" /></td>
+          </tr>
+          <tr>
+            <td>핫 크리스피 버거<input type="checkbox" name="menu" value="핫크리스피버거" /></td><td>포테이토 피자<input type="checkbox" name="menu" value="potatopizza" /></td><td>오리엔탈 파닭<input type="checkbox" name="menu" value="오리엔탈파닭" /></td>
+          </tr>
+        </tbody>
+        <input type="button" src="http://bcacfe75.ngrok.io/qrcode" value="전송" onClick="goData()"/>
+    </form>
+    </table>
+    <p>QRcode :<span id="qr"></span></p>
+    <p>
+    <input type="button" value="이전" />
+    <li><a href="app.html">이전</a></li>
+    </p>
+  </body>
+
+</html>

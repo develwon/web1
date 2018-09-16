@@ -1,0 +1,13 @@
+form tag 예제.
+
+<form action="a.jsp">
+  성별<br>
+  <input type="checkbox" name="gender" value="female"> 여성 <br>
+  <input type="checkbox" name="gender" value="male"> 남성 <br>
+  <br>
+  좋아하는 과일<br>
+  <input type="checkbox" name="fruits" value="apple" checked> 사과 <br>
+  <input type="checkbox" name="fruits" value="banana"> 바나나 <br>
+  <input type="checkbox" name="fruits" value="orange"> 오렌지 <br>
+  <input type="submit" >
+</form>

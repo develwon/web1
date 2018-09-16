@@ -1,0 +1,46 @@
+<!-- <!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>ajax_sample</title>
+  </head>
+  <body>
+    <div class="serverInfo">
+
+        Server is running on <span data-replace="platform">???</span>
+        with Node <span data-replace="nodeVersion">???</span>. It has
+        been up for <span data-replace="uptime">???</span> seconds.
+    </div>
+    <script>
+    function refreshServerInfo() {
+      const req = new XMLHttpRequest();
+      // req.addEventListener('load', function() {
+      //   //TODO: 값을 HTML에 삽입하는 것은 나중에 한다.
+      //   console.log(this.responseText);
+      // });
+
+
+      req.addEventListener('load', function() {
+        const data = JSON.parse(this.responseText); //JSON.parse를 써서 문자열을 객체로 바꾼다.
+
+        const serverInfo = document.querySelector('.serverInfo');
+
+        Object.keys(data).forEach(p => {
+          console.log(p)
+          const replacements =
+          serverInfo.querySelectorAll(`[data-replace="${p}"]`);
+          console.log(serverInfo);
+          for(let r of replacements) {
+            console.log(r);
+            r.textContent = data[p];
+              }
+        });
+      });
+      req.open('GET', 'http://localhost:7070', true);
+      req.send();
+
+    }
+    refreshServerInfo();
+    </script>
+  </body>
+</html> -->

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> device-main </title>
+    <meta charset="utf-8">
+    <!-- <script src="app.js"></script> -->
+  </head>
+  <body>
+    <h1> Device Main Home </h1>
+    <h2> Can I help you? </h2>
+    <h3> go to KBS Server</h3>
+    <!-- <input type="button" id="hw" value="push" /> -->
+    <p>conect situation :<span id="cnt"></span></p>
+    <!-- <h4>menu bigmac</h4> -->
+    <input type="button" id="push" value="push"/>
+    <script>
+    $('#push').click(function(){
+      console.log("Test");
+      $.ajax({
+        url:'http://b2ebdbf1.ngrok.io',
+        type:'get',
+        // dataType:'json',
+        success:function(data){
+          var str ='';
+          for(var name in data){
+            str += '<li>'+data[name]+'<li>';
+          }
+          $('cnt').html('<ul>' + str + '</ul>');
+        }
+      })
+        // var bsv = new XMLHttpRequest();
+        // bsv.open('GET', 'http://375c5365.ngrok.io');
+        // bsv.onreadystatechange = function(){
+        //   if(bsv.readyState === 4 ){
+        //   // if(bsv.readyState === 4 && bsv.status === 200){
+        //     console.log(bsv);
+        //     console.log(bsv.responseText);
+        //     document.querySelector('#cnt').innerHTML = bsv.responseText;
+        //   }
+        // }
+        // bsv.send();
+      });
+    </script>
+    <ol>
+      <li><a href="MENU.html">MENU</a></li>
+      <li><a href="Order confirmation">Order confirmation</a></li>
+    </ol>
+    <p>Please check the meun and paying the list.</p>
+
+  </body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</html>

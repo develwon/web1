@@ -1,0 +1,42 @@
+GET 방식
+
+fetch('https://dog.ceo/api/breeds/image/random', {
+              method: 'GET',
+              headers: {
+                "Content-type": "application/json",
+                "x-api-key": "663dde0a-12c7-445c-a072-c66ef62f64b6"
+              }})
+              .then((res)=>{ return res.json()})
+              .then(function(response) {
+                  console.log(JSON.stringify(response));
+                  console.log(JSON.stringify(response));
+                  console.log(response.message);
+                  images.value =response.message;
+});
+}
+
+--------------------------------------------------------------------------------
+POST 방식
+
+fetch('http://fc32d6d8.ngrok.io/users/signin',{
+	            method: "POST",
+	            headers: {
+	            	"Content-type": "application/json"
+	            },
+	            body : JSON.stringify({
+	            	userid : userid.value,
+	                password : password.value
+	              })
+	        }).then((res)=>{
+	            // console.log( JSON.parse(res._bodyInit).documents[1].address_name )
+	            console.log(JSON.stringify(res));
+	            console.log( JSON.parse(res._bodyInit));
+
+	            if( JSON.parse(res._bodyInit) == true){
+	            	router.push("Home");
+	            	console.log("Move to Home");
+	            }
+	            // JSON.parse(res._bodyInit).documents[1].address_name
+	        }).catch((err)=>{
+	            console.log(err);
+	        });
